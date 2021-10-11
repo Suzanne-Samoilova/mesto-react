@@ -1,20 +1,24 @@
 import React from 'react';
 import Header from './Header';
 import Main from "./Main";
-import {PopupEditProfile} from "./PopupEditProfile";
+// import {PopupEditProfile} from "./PopupEditProfile";
 
 function App() {
-  const [isOpenPopupProfileEdit, setIsOpenPopupProfileEdit] = React.useState(false);
+  // const [isOpenPopupProfileEdit, setIsOpenPopupProfileEdit] = React.useState(false);
+  // const [isOpenPopupAddPlace, setIsOpenPopupAddPlace] = React.useState(false);
+  // const [isOpenPopupEditAvatar, setIsOpenPopupEditAvatar] = React.useState(false);
 
-  console.log(isOpenPopupProfileEdit);
   return (
       <div className="page">
         <div className="content">
           <Header />
-          <Main handleEditProfile={setIsOpenPopupProfileEdit} />
-          <PopupEditProfile
-              isOpen={isOpenPopupProfileEdit}
-              handleEditProfile={setIsOpenPopupProfileEdit} />
+          <Main />
+
+          {/*<Main handleEditProfile={setIsOpenPopupProfileEdit} />*/}
+          {/*<PopupEditProfile*/}
+          {/*    isOpen={isOpenPopupProfileEdit}*/}
+          {/*    handleEditProfile={setIsOpenPopupProfileEdit}*/}
+          {/*/>*/}
 
 
           {/*Шаблон карточки*/}

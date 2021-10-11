@@ -8,7 +8,8 @@
     left: 0;
     justify-content: center;
     align-items: center;
-    visibility: visible;
-    opacity: 1;
+    visibility: hidden;
+    /*Полностью прозрачно*/
+    opacity: 0;
     transition: visibility 0.3s linear, opacity 0.3s linear;
 }
