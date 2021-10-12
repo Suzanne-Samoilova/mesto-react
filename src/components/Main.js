@@ -26,6 +26,12 @@ function Main() {
         // handleAddPlace(true);
         document.querySelector('.popup_add-card').classList.add('popup_opened');
     }
+    
+    function closeAllPopups() {
+        document.querySelector('.popup_change-avatar').classList.remove('popup_opened');
+        document.querySelector('.popup').classList.remove('popup_opened');
+        document.querySelector('.popup_add-card').classList.remove('popup_opened');
+    }
 
     return (
         <>
@@ -37,10 +43,10 @@ function Main() {
                     </div>
                     <div className="profile__info">
                         <div className="profile__name-box">
-                            <h1 className="profile__name">jhghgjh</h1>
-                            <button className="profile__button-edit" type="button" onClick={handleEditProfileClick} />
+                            <h1 className="profile__name">Жак-Ив Кусто</h1>
+                            <button className="profile__button-edit" type="button" onClick={handleEditProfileClick}/>
                         </div>
-                        <p className="profile__text">jhghgjh</p>
+                        <p className="profile__text">Исследователь океана</p>
                     </div>
                 </div>
                 <button className="profile__button-add" type="button" onClick={handleAddPlaceClick} />
@@ -55,7 +61,7 @@ function Main() {
 
         <div className="popup">
             <div className="popup__container">
-                <button className="popup__button-close" type="button" />
+                <button className="popup__button-close" type="button" onClick={closeAllPopups}/>
                 <div className="popup__content">
                     <h2 className="popup__title">Редактировать профиль</h2>
                     <form className="popup__form" name="SubmitEditProfile" noValidate>
@@ -83,7 +89,7 @@ function Main() {
 
         <div className="popup popup_add-card">
             <div className="popup__container">
-                <button className="popup__button-close popup__button-close_add-card" type="button" />
+                <button className="popup__button-close popup__button-close_add-card" type="button" onClick={closeAllPopups} />
                 <div className="popup__content">
                     <h2 className="popup__title">Новое место</h2>
                     <form className="popup__form popup__form_add" name="SubmitAddPlace" noValidate>
@@ -108,7 +114,7 @@ function Main() {
 
             <div className="popup popup_change-avatar">
                 <div className="popup__container">
-                    <button className="popup__button-close" type="button" />
+                    <button className="popup__button-close" type="button" onClick={closeAllPopups} />
                     <div className="popup__content">
                         <h2 className="popup__title">Обновить аватар?</h2>
                         <form className="popup__form popup__form-avatar" name="" noValidate>
