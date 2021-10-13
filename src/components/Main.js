@@ -9,8 +9,6 @@ function Main() {
     const [isPopupEditAvatarOpen, setIsPopupEditAvatarOpen] = React.useState(false);
     const [isPopupConfirmOpen, setIsPopupConfirmOpen] = React.useState(false);
 
-    console.log(isPopupEditProfileOpen); //false
-
     function handleEditProfileClick() {
         setIsPopupEditProfileOpen(true);
     }
@@ -123,7 +121,6 @@ function Main() {
                 />
                 <span className="popup__form-error link-avatar-error" id="link-avatar-error">Введите адрес сайта.</span>
             </PopupWithForm>
-
 
 
             <PopupWithForm name="popup_confirm"

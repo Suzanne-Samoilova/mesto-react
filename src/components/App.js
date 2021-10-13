@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import Main from "./Main";
+import ImagePopup from "./ImagePopup";
 
 
 function App() {
@@ -13,12 +14,8 @@ function App() {
         <div className="content">
           <Header />
           <Main />
+          <ImagePopup />
 
-          {/*<Main*/}
-          {/*    onEditProfile={handleEditProfileClick}*/}
-          {/*    onAddPlace={handleAddPlaceClick}*/}
-          {/*    onEditAvatar={handleEditAvatarClick}*/}
-          {/*/>*/}
 
 
           {/*Шаблон карточки*/}
