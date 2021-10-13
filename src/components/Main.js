@@ -31,6 +31,7 @@ function Main() {
         setIsPopupEditProfileOpen(false);
         setIsPopupAddPlaceOpen(false);
         setIsPopupEditAvatarOpen(false);
+        setIsPopupConfirmOpen(false);
     }
 
     return (
