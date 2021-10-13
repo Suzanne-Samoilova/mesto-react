@@ -7,6 +7,7 @@ function Main() {
     const [isPopupEditProfileOpen, setIsPopupEditProfileOpen] = React.useState(false);
     const [isPopupAddPlaceOpen, setIsPopupAddPlaceOpen] = React.useState(false);
     const [isPopupEditAvatarOpen, setIsPopupEditAvatarOpen] = React.useState(false);
+    const [isPopupConfirmOpen, setIsPopupConfirmOpen] = React.useState(false);
 
     console.log(isPopupEditProfileOpen); //false
 
@@ -20,6 +21,10 @@ function Main() {
 
     function handleEditAvatarClick() {
         setIsPopupEditAvatarOpen(true);
+    }
+
+    function handleDeleteCardClick() {
+        setIsPopupConfirmOpen(true);
     }
     
     function closeAllPopups() {
@@ -117,6 +122,18 @@ function Main() {
                 />
                 <span className="popup__form-error link-avatar-error" id="link-avatar-error">Введите адрес сайта.</span>
             </PopupWithForm>
+
+
+
+            <PopupWithForm name="popup_confirm"
+                           title="Вы уверены?"
+                           buttonText="Да"
+                           isOpen={isPopupConfirmOpen}
+                           onClose={closeAllPopups}
+            >
+            </PopupWithForm>
+
+
         </>
     );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import Main from "./Main";
-// import {PopupEditProfile} from "./PopupEditProfile";
+
 
 function App() {
   // const [isOpenPopupProfileEdit, setIsOpenPopupProfileEdit] = React.useState(false);
@@ -13,12 +13,6 @@ function App() {
         <div className="content">
           <Header />
           <Main />
-
-          {/*<Main handleEditProfile={setIsOpenPopupProfileEdit} />*/}
-          {/*<PopupEditProfile*/}
-          {/*    isOpen={isOpenPopupProfileEdit}*/}
-          {/*    handleEditProfile={setIsOpenPopupProfileEdit}*/}
-          {/*/>*/}
 
           {/*<Main*/}
           {/*    onEditProfile={handleEditProfileClick}*/}
