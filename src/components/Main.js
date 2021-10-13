@@ -79,7 +79,6 @@ function Main() {
             </PopupWithForm>
 
 
-
             <PopupWithForm name="add-card"
                            title="Новое место"
                            buttonText="Создать"
@@ -103,50 +102,21 @@ function Main() {
                 <span className="popup__form-error new-link-error" id="new-link-error">Введите адрес сайта.</span>
             </PopupWithForm>
 
-        {/*<div className="popup popup_add-card">*/}
-        {/*    <div className="popup__container">*/}
-        {/*        <button className="popup__button-close popup__button-close_add-card" type="button" onClick={closeAllPopups} />*/}
-        {/*        <div className="popup__content">*/}
-        {/*            <h2 className="popup__title">Новое место</h2>*/}
-        {/*            <form className="popup__form popup__form_add" name="SubmitAddPlace" noValidate>*/}
-        {/*                <input className="popup__text popup__text_input_name-place" id="new-place"*/}
-        {/*                       type="text"*/}
-        {/*                       name="AddNamePlace"*/}
-        {/*                       placeholder="Название"*/}
-        {/*                       minLength="2" maxLength="30"*/}
-        {/*                       required />*/}
-        {/*                <span className="popup__form-error new-place-error" id="new-place-error">Вы пропустили это поле.</span>*/}
-        {/*                <input className="popup__text popup__text_input_link" id="new-link"*/}
-        {/*                       type="url"*/}
-        {/*                       name="AddLinkPlace"*/}
-        {/*                       placeholder="Ссылка на картинку"*/}
-        {/*                       required />*/}
-        {/*                <span className="popup__form-error new-link-error" id="new-link-error">Введите адрес сайта.</span>*/}
-        {/*                <button className="popup__button-save" type="submit">Создать</button>*/}
-        {/*            </form>*/}
-        {/*        </div>*/}
-        {/*    </div>*/}
-        {/*</div>*/}
 
-            <div className="popup popup_change-avatar">
-                <div className="popup__container">
-                    <button className="popup__button-close" type="button" onClick={closeAllPopups} />
-                    <div className="popup__content">
-                        <h2 className="popup__title">Обновить аватар?</h2>
-                        <form className="popup__form popup__form-avatar" name="" noValidate>
-                            <input className="popup__text link-avatar" id="link-avatar"
-                                   type="url"
-                                   name="EditAvatar"
-                                   placeholder="Ссылка на картинку"
-                                   required />
-                            <span className="popup__form-error link-avatar-error" id="link-avatar-error">Введите адрес сайта.</span>
-                            <button className="popup__button-save" type="submit">Сохранить</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-
+            <PopupWithForm name="change-avatar"
+                           title="Обновить аватар?"
+                           buttonText="Сохранить"
+                           isOpen={isPopupEditAvatarOpen}
+                           onClose={closeAllPopups}
+            >
+                <input className="popup__text link-avatar" id="link-avatar"
+                       type="url"
+                       name="EditAvatar"
+                       placeholder="Ссылка на картинку"
+                       required
+                />
+                <span className="popup__form-error link-avatar-error" id="link-avatar-error">Введите адрес сайта.</span>
+            </PopupWithForm>
         </>
     );
 }
