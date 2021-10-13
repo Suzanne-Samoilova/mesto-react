@@ -1,19 +1,22 @@
-// function PopupWithForm(props) {
-
 function PopupWithForm(props) {
     return (
-//      <div className={`popup popup_type_${props.name} ${props.isOpen ? 'popup_opened' : ''}\`}>
+     <div className={`popup popup_type_${props.name} ${props.isOpen ? 'popup_opened' : null}`}>
 
-        <div className={`popup popup_type_${props.name}`}>
+        {/*<div className={`popup popup_type_${props.name}`}>*/}
+
             <div className="popup__container">
-                <button className="popup__button-close" type="button" />
+                <button className="popup__button-close"
+                        type="button"
+                        aria-label="Закрыть попап"
+                        onClick={props.onClose} />
                 <div className="popup__content">
-                    <h2 className="popup__title">Редактировать профиль</h2>
-                    <form className="popup__form" name="SubmitEditProfile" noValidate>
+                    <h2 className="popup__title">{props.title}</h2>
+                    {/*<form className="popup__form" name="SubmitEditProfile" noValidate>*/}
+                    <form className="popup__form" name={props.name} noValidate>
 
                         {props.children}
 
-                        <button className="popup__button-save" type="submit">Сохранить</button>
+                        <button className="popup__button-save" type="submit">{props.buttonText}</button>
                     </form>
                 </div>
             </div>

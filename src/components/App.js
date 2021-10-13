@@ -20,6 +20,12 @@ function App() {
           {/*    handleEditProfile={setIsOpenPopupProfileEdit}*/}
           {/*/>*/}
 
+          {/*<Main*/}
+          {/*    onEditProfile={handleEditProfileClick}*/}
+          {/*    onAddPlace={handleAddPlaceClick}*/}
+          {/*    onEditAvatar={handleEditAvatarClick}*/}
+          {/*/>*/}
+
 
           {/*Шаблон карточки*/}
           <template id="newcard" className="card-template_type_default">
