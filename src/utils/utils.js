@@ -1,8 +1,8 @@
-// import FormValidator from "./FormValidator";
-// import {config} from "./constants";
-// import UserInfo from "./UserInfo";
-// import PopupWithForm from "./PopupWithForm";
-// import Api from "./Api";
+// import FormValidator from './FormValidator';
+// import {config} from './constants';
+// import UserInfo from './UserInfo';
+// import PopupWithForm from './PopupWithForm';
+// import Api from './Api';
 
 // // Экземпляры класса FormValidator
 // export const editProfileFormValidator = new FormValidator(config, document.querySelector('.popup').querySelector('.popup__form'));
