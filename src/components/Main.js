@@ -3,7 +3,6 @@ import Footer from './Footer';
 // import PopupWithForm from './PopupWithForm';
 import { api } from '../utils/Api';
 
-// function Main({onEditProfile, onAddPlace, onEditAvatar}) {
 function Main(props) {
     const [userName, setUserName] = React.useState();
     const [userDescription, setUserDescription] = React.useState();
@@ -11,9 +10,9 @@ function Main(props) {
 
     React.useEffect(() => {
         Promise.all([api.getUserInfo(), api.getInitialCards()]).then((data) => {
-            setAvatar(data[0].avatar);
             setUserName(data[0].name);
             setUserDescription(data[0].about);
+            setAvatar(data[0].avatar);
             // setCards(data[1]);
         })
             .catch((err) => console.log(err))
@@ -56,9 +55,6 @@ function Main(props) {
             <Footer />
 
         </main>
-
-
-
 
         </>
     );
