@@ -101,7 +101,7 @@ function App() {
                          buttonText="Сохранить"
                          isOpen={isEditAvatarPopupOpen}
                          onClose={closeAllPopups}
-          >
+          >ю
             <input className="popup__text link-avatar" id="link-avatar"
                    type="url"
                    name="EditAvatar"

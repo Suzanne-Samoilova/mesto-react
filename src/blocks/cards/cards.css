@@ -6,6 +6,8 @@
     grid-auto-flow: row;
     justify-content: center;
     margin: 36px auto 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 @media screen and (min-width: 880px) {
