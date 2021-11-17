@@ -11,6 +11,7 @@ function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
+  const [selectedCard, setSelectedCard] = React.useState();
   // const [isConfirmPopupOpen, setIsConfirmPopupOpen] = React.useState(false);
 
   function handleEditProfileClick() {
@@ -23,6 +24,10 @@ function App() {
 
   function handleAddPlaceClick() {
     setIsAddPlacePopupOpen(true);
+  }
+
+  function handleCardClick(card) {
+    setSelectedCard(card);
   }
 
   // function handleDeleteCardClick() {
@@ -46,7 +51,7 @@ function App() {
               onEditProfile={handleEditProfileClick}
               onEditAvatar={handleEditAvatarClick}
               onAddPlace={handleAddPlaceClick}
-              // onCardClick={handleCardClick}
+              onCardClick={handleCardClick}
           />
 
           <PopupWithForm name=""
@@ -101,7 +106,7 @@ function App() {
                          buttonText="Сохранить"
                          isOpen={isEditAvatarPopupOpen}
                          onClose={closeAllPopups}
-          >ю
+          >
             <input className="popup__text link-avatar" id="link-avatar"
                    type="url"
                    name="EditAvatar"
@@ -119,24 +124,10 @@ function App() {
           >
           </PopupWithForm>
 
-          <ImagePopup />
+          <ImagePopup card={selectedCard}
+                      onClose={closeAllPopups}
+          />
 
-          {/*Шаблон карточки*/}
-          <template id="newcard" className="card-template_type_default">
-            <article className="card">
-              <div className="card__photo-box">
-                <img className="card__photo" alt="Фотография" />
-              </div>
-              <div className="card__name">
-                <h2 className="card__text" />
-                <div className="card__like-container">
-                  <button className="card__button-like" type="button" />
-                  <p className="card__counter-like">0</p>
-                </div>
-              </div>
-              <button className="card__button-delete" type="button" />
-            </article>
-          </template>
         </div>
       </div>
   );
