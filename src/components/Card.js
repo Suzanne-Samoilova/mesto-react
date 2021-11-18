@@ -18,14 +18,18 @@ function Card(props) {
                     <h2 className="card__text">
                         {props.card.name}</h2>
                     <div className="card__like-container">
-                        <button className="card__button-like" type="button"
+                        <button className="card__button-like"
+                                aria-label="Лайк"
+                                type="button"
                         />
                         <p className="card__counter-like">
-                            {props.card.likes.length.toString()}
+                            {props.card.likes.length}
                         </p>
                     </div>
                 </div>
-                <button className="card__button-delete" type="button"
+                <button className="card__button-delete"
+                        aria-label="Удалить карточку"
+                        type="button"
                 />
             </article>
         </li>

@@ -4,23 +4,25 @@ import { api } from '../utils/Api';
 import Card from './Card';
 
 function Main(props) {
+    // имя профиля
     const [userName, setUserName] = React.useState();
+    // инфо профиля
     const [userDescription, setUserDescription] = React.useState();
+    // аватар профиля
     const [userAvatar, setAvatar] = React.useState();
-
+    // карточка
     const [cards, setCards] = React.useState([]);
 
     React.useEffect(() => {
-        Promise.all([api.getUserInfo(), api.getInitialCards()]).then((data) => {
+        Promise.all([api.getUserInfo(), api.getInitialCards()])
+            .then((data) => {
             setUserName(data[0].name);
             setUserDescription(data[0].about);
             setAvatar(data[0].avatar);
-
             setCards(data[1]);
         })
             .catch((err) => console.log(err))
     }, []);
-
 
     return (
         <>
@@ -29,25 +31,30 @@ function Main(props) {
                 <div className="profile__box">
                     <div className="profile__avatar-edit"
                          aria-label="Изменить аватар"
-                         onClick={props.onEditAvatar}
-                    >
-                        <img className="profile__image" src={userAvatar} alt="Изображение профиля" />
+                         onClick={props.onEditAvatar}>
+                        <img className="profile__image"
+                             src={userAvatar}
+                             alt="Изображение профиля" />
                     </div>
                     <div className="profile__info">
                         <div className="profile__name-box">
-                            <h1 className="profile__name">{userName}</h1>
+                            <h1 className="profile__name">
+                                {userName}
+                            </h1>
                             <button className="profile__button-edit"
+                                    aria-label="Изменить данные профиля"
                                     type="button"
-                                    aria-label="Изменить профиль"
                                     onClick={props.onEditProfile}
                             />
                         </div>
-                        <p className="profile__text">{userDescription}</p>
+                        <p className="profile__text">
+                            {userDescription}
+                        </p>
                     </div>
                 </div>
                 <button className="profile__button-add"
-                        type="button"
                         aria-label="Добавить место"
+                        type="button"
                         onClick={props.onAddPlace}
                 />
             </section>
@@ -57,7 +64,6 @@ function Main(props) {
                     <Card
                         onCardClick={props.onCardClick}
                         card={card}
-                        key={card._id}
                     />
                 ))}
             </ul>

@@ -16,14 +16,6 @@
 
 // export const user = new UserInfo({ profileNameElement, profileInfoElement, profileAvatar });
 
-// export const api = new Api({
-//     baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-27',
-//     headers: {
-//         authorization: '2ad13860-f9cc-4265-9332-9990cf978091',
-//         'Content-Type': 'application/json'
-//     }
-// });
-
 // // Попап Редактировать профиль
 // export const popupClassEditProfile = new PopupWithForm({
 //     popupSelector: '.popup',

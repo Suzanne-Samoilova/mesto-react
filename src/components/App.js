@@ -36,8 +36,9 @@ function App() {
 
   function closeAllPopups() {
     setIsEditProfilePopupOpen(false);
-    setIsAddPlacePopupOpen(false);
     setIsEditAvatarPopupOpen(false);
+    setIsAddPlacePopupOpen(false);
+    setSelectedCard();
     // setIsPopupConfirmOpen(false);
   }
 
