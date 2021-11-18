@@ -39,7 +39,7 @@ function App() {
     setIsEditAvatarPopupOpen(false);
     setIsAddPlacePopupOpen(false);
     setSelectedCard();
-    // setIsPopupConfirmOpen(false);
+    // setIsConfirmPopupOpen(false);
   }
 
 
@@ -53,6 +53,7 @@ function App() {
               onEditAvatar={handleEditAvatarClick}
               onAddPlace={handleAddPlaceClick}
               onCardClick={handleCardClick}
+              // onConfirm={handleDeleteCardClick}
           />
 
           <PopupWithForm name=""

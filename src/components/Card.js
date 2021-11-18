@@ -30,6 +30,7 @@ function Card(props) {
                 <button className="card__button-delete"
                         aria-label="Удалить карточку"
                         type="button"
+                        // onClick={props.onConfirm}
                 />
             </article>
         </li>
