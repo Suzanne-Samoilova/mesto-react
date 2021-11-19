@@ -25,7 +25,6 @@ function Main(props) {
     }, []);
 
     return (
-        <>
         <main>
             <section className="profile">
                 <div className="profile__box">
@@ -64,6 +63,7 @@ function Main(props) {
                     <Card
                         onCardClick={props.onCardClick}
                         card={card}
+                        key={card._id}
                     />
                 ))}
             </ul>
@@ -71,8 +71,6 @@ function Main(props) {
             <Footer />
 
         </main>
-
-        </>
     );
 }
 
