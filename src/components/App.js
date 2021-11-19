@@ -5,7 +5,6 @@ import ImagePopup from './ImagePopup';
 import PopupWithForm from './PopupWithForm';
 import Footer from './Footer';
 
-
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);

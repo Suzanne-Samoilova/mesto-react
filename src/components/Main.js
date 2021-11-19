@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from './Footer';
 import { api } from '../utils/Api';
 import Card from './Card';
 
