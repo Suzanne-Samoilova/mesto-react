@@ -67,9 +67,6 @@ function Main(props) {
                     />
                 ))}
             </ul>
-
-            <Footer />
-
         </main>
     );
 }

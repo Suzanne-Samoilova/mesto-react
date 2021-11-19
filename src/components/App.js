@@ -1,10 +1,9 @@
-// Проверить перед сдачей ширину контента в файле blocks/content !!!
-
 import React from 'react';
 import Header from './Header';
 import Main from './Main';
 import ImagePopup from './ImagePopup';
 import PopupWithForm from './PopupWithForm';
+import Footer from './Footer';
 
 
 function App() {
@@ -55,13 +54,13 @@ function App() {
               onCardClick={handleCardClick}
               // onConfirm={handleDeleteCardClick}
           />
+          <Footer />
 
           <PopupWithForm name=""
                          title="Редактировать профиль"
                          buttonText="Сохранить"
                          isOpen={isEditProfilePopupOpen}
-                         onClose={closeAllPopups}
-          >
+                         onClose={closeAllPopups}>
             <input className="popup__text popup__text_input_name" id="profile-name"
                    type="text"
                    name="EditName"
@@ -84,8 +83,7 @@ function App() {
                          title="Новое место"
                          buttonText="Создать"
                          isOpen={isAddPlacePopupOpen}
-                         onClose={closeAllPopups}
-          >
+                         onClose={closeAllPopups}>
             <input className="popup__text popup__text_input_name-place" id="new-place"
                    type="text"
                    name="AddNamePlace"
@@ -107,8 +105,7 @@ function App() {
                          title="Обновить аватар?"
                          buttonText="Сохранить"
                          isOpen={isEditAvatarPopupOpen}
-                         onClose={closeAllPopups}
-          >
+                         onClose={closeAllPopups}>
             <input className="popup__text link-avatar" id="link-avatar"
                    type="url"
                    name="EditAvatar"
@@ -122,8 +119,7 @@ function App() {
                          title="Вы уверены?"
                          buttonText="Да"
                          // isOpen={isConfirmPopupOpen}
-                         onClose={closeAllPopups}
-          >
+                         onClose={closeAllPopups}>
           </PopupWithForm>
 
           <ImagePopup card={selectedCard}
