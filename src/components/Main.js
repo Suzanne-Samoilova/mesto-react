@@ -4,11 +4,11 @@ import Card from './Card';
 
 function Main(props) {
     // имя профиля
-    const [userName, setUserName] = React.useState();
+    const [userName, setUserName] = React.useState('');
     // инфо профиля
-    const [userDescription, setUserDescription] = React.useState();
+    const [userDescription, setUserDescription] = React.useState('');
     // аватар профиля
-    const [userAvatar, setAvatar] = React.useState();
+    const [userAvatar, setAvatar] = React.useState('');
     // карточка
     const [cards, setCards] = React.useState([]);
 
