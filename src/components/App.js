@@ -9,7 +9,6 @@ import {CurrentUserContext} from "../context/CurrentUserContext";
 
 
 function App() {
-  const [cards, setCards] = React.useState([]);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
@@ -25,16 +24,6 @@ function App() {
         })
         .catch((err) => console.log(err));
   }, []);
-
-  React.useEffect(() => {
-    api
-        .getInitialCards()
-        .then((data) => {
-          setCards(data);
-        })
-        .catch((err) => console.log(err));
-  }, []);
-
 
 
   function handleEditProfileClick() {
@@ -53,16 +42,15 @@ function App() {
     setSelectedCard(card);
   }
 
-  // function handleDeleteCardClick() {
-  //     setIsConfirmPopupOpen(true);
-  // }
+  function handleDeleteCardClick() {
+
+  }
 
   function closeAllPopups() {
     setIsEditProfilePopupOpen(false);
     setIsEditAvatarPopupOpen(false);
     setIsAddPlacePopupOpen(false);
     setSelectedCard({name: '', link: ''});
-    // setIsConfirmPopupOpen(false);
   }
 
 
@@ -77,12 +65,10 @@ function App() {
                 onEditAvatar={handleEditAvatarClick}
                 onAddPlace={handleAddPlaceClick}
                 onCardClick={handleCardClick}
-                // onCardDelete={handleCardDelete}
-                cards={cards}
-            />
+                onCardDelete={handleDeleteCardClick} />
             <Footer />
 
-            <PopupWithForm name=""
+            <PopupWithForm name="EditProfile"
                            title="Редактировать профиль"
                            buttonText="Сохранить"
                            isOpen={isEditProfilePopupOpen}
@@ -139,7 +125,7 @@ function App() {
             <PopupWithForm name="popup_confirm"
                            title="Вы уверены?"
                            buttonText="Да"
-                           // isOpen={isConfirmPopupOpen}
+                           // isOpen={}
                            onClose={closeAllPopups}>
             </PopupWithForm>
 
@@ -147,7 +133,7 @@ function App() {
                         onClose={closeAllPopups} />
 
           </div>
-      </div>
+        </div>
       </CurrentUserContext.Provider>
   );
 }

@@ -51,7 +51,7 @@ function Card(props) {
             <button className={cardDeleteButtonClassName}
                     aria-label="Удалить карточку"
                     type="button"
-                    // onClick={props.onConfirm}
+                    // onClick={props.onCardDelete}
             />
         </article>
     )
