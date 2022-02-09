@@ -42,10 +42,6 @@ function App() {
     setSelectedCard(card);
   }
 
-  function handleDeleteCardClick() {
-
-  }
-
   function closeAllPopups() {
     setIsEditProfilePopupOpen(false);
     setIsEditAvatarPopupOpen(false);
@@ -64,8 +60,7 @@ function App() {
                 onEditProfile={handleEditProfileClick}
                 onEditAvatar={handleEditAvatarClick}
                 onAddPlace={handleAddPlaceClick}
-                onCardClick={handleCardClick}
-                onCardDelete={handleDeleteCardClick} />
+                onCardClick={handleCardClick} />
             <Footer />
 
             <PopupWithForm name="EditProfile"

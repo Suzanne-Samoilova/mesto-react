@@ -26,6 +26,16 @@ function Card(props) {
         props.onCardClick(props.card);
     }
 
+    function handleLikeClick() {
+        props.onCardLike(props.card);
+    }
+
+    function handleDeleteClick() {
+        props.onCardDelete(props.card);
+    }
+
+
+
 
     return (
         <article className="card">
@@ -42,7 +52,8 @@ function Card(props) {
                 <div className="card__like-container">
                     <button className={cardLikeButtonClassName}
                             aria-label="Лайк"
-                            type="button" />
+                            type="button"
+                            onClick={handleLikeClick} />
                     <p className="card__counter-like">
                         {props.card.likes.length}
                     </p>
@@ -51,7 +62,7 @@ function Card(props) {
             <button className={cardDeleteButtonClassName}
                     aria-label="Удалить карточку"
                     type="button"
-                    // onClick={props.onCardDelete}
+                    onClick={handleDeleteClick}
             />
         </article>
     )
