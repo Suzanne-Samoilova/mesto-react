@@ -21,7 +21,7 @@ class Api {
     }
 
     // Получить начальные карточки
-    getInitialCards() {
+    getCardList() {
         return fetch(`${this._baseUrl}/cards`, {
             headers: this._headers
         })
@@ -54,13 +54,13 @@ class Api {
     }
 
     // Запостить карточку
-    postCard(newCard) {
+    postCard(data) {
         return fetch(`${this._baseUrl}/cards`, {
             method: 'POST',
             headers: this._headers,
             body: JSON.stringify({
-                name: newCard.AddNamePlace,
-                link: newCard.AddLinkPlace
+                name: data.name,
+                link: data.link
             })
         })
             .then(this._handleResponse)
@@ -85,7 +85,7 @@ class Api {
 
 
     getInitialData() {
-        return Promise.all([this.getUserInfo(), this.getInitialCards()]);
+        return Promise.all([this.getUserInfo(), this.getCardList()]);
     }
 }
 
