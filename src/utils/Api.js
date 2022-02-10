@@ -42,12 +42,12 @@ class Api {
     }
 
     // Установка аватара
-    setAvatar(data) {
+    setUserAvatar(data) {
         return fetch(`${this._baseUrl}/users/me/avatar`, {
             method: 'PATCH',
             headers: this._headers,
             body: JSON.stringify({
-                avatar: data.EditAvatar
+                avatar: data.avatar
             })
         })
             .then(this._handleResponse)

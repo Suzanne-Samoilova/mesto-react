@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import PopupWithForm from "./PopupWithForm";
 import ImagePopup from "./ImagePopup";
 import EditProfilePopup from "./EditProfilePopup";
+import EditAvatarPopup from "./EditAvatarPopup";
 
 
 function App() {
@@ -52,6 +53,16 @@ function App() {
         .catch((err) => console.log(err));
   }
 
+  function handleUpdateAvatar({avatar}) {
+    api
+        .setUserAvatar({avatar})
+        .then((res) => {
+          setCurrentUser(res);
+          closeAllPopups();
+        })
+        .catch((err) => console.log(err));
+  }
+
   function closeAllPopups() {
     setIsEditProfilePopupOpen(false);
     setIsEditAvatarPopupOpen(false);
@@ -75,6 +86,10 @@ function App() {
                               onClose={closeAllPopups}
                               onUpdateUser={handleUpdateUser} />
 
+            <EditAvatarPopup isOpen={isEditAvatarPopupOpen}
+                             onClose={closeAllPopups}
+                             onUpdateAvatar={handleUpdateAvatar} />
+
             <PopupWithForm name="add-card"
                            title="Новое место"
                            buttonText="Создать"
@@ -93,19 +108,6 @@ function App() {
                      placeholder="Ссылка на картинку"
                      required />
               <span className="popup__form-error new-link-error">Введите адрес сайта.</span>
-            </PopupWithForm>
-
-            <PopupWithForm name="change-avatar"
-                           title="Обновить аватар?"
-                           buttonText="Сохранить"
-                           isOpen={isEditAvatarPopupOpen}
-                           onClose={closeAllPopups}>
-              <input className="popup__text link-avatar"
-                     type="url"
-                     name="EditAvatar"
-                     placeholder="Ссылка на картинку"
-                     required />
-              <span className="popup__form-error link-avatar-error">Введите адрес сайта.</span>
             </PopupWithForm>
 
             <PopupWithForm name="popup_confirm"
