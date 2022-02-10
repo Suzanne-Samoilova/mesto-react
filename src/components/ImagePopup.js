@@ -4,16 +4,14 @@ function ImagePopup(props) {
             <div className="popup__container-expand">
                 <img className="popup__img-expand"
                      src={props.card?.link}
-                     alt={props.card?.name}
-                />
+                     alt={props.card?.name} />
                 <h2 className="popup__name-expand">
                     {props.card ? props.card.name : '#'}
                 </h2>
                 <button className="popup__button-close popup__button-close-expand"
                         aria-label="Закрыть попап"
                         type="button"
-                        onClick={props.onClose}
-                />
+                        onClick={props.onClose} />
             </div>
         </div>
     );

@@ -5,18 +5,13 @@ import {CurrentUserContext} from "../context/CurrentUserContext";
 function Card(props) {
     const currentUser = React.useContext(CurrentUserContext);
 
-    // Определяем, являемся ли мы владельцем текущей карточки
     const isOwn = props.card.owner._id === currentUser._id;
-
-    // Создаём переменную, которую после зададим в `className` для кнопки удаления
-    const cardDeleteButtonClassName = `card__button-delete ${
-            isOwn ? 'card__button-delete_visible' : ''}`;
-
-
-    // Определяем, есть ли у карточки лайк, поставленный текущим пользователем
     const isLiked = props.card.likes.some((i) => i._id === currentUser._id);
 
-    // Создаём переменную, которую после зададим в `className` для кнопки лайка
+    const cardDeleteButtonClassName = `card__button-delete ${
+        isOwn ? 'card__button-delete_visible' : ''
+    }`;
+
     const cardLikeButtonClassName = `card__button-like ${
         isLiked ? "card__button-like_active" : ""
     }`;
@@ -35,16 +30,13 @@ function Card(props) {
     }
 
 
-
-
     return (
         <article className="card">
             <div className="card__photo-box">
                 <img className="card__photo"
                      src={props.card.link}
                      alt={props.card.name}
-                     onClick={handleClick}
-                />
+                     onClick={handleClick} />
             </div>
             <div className="card__name">
                 <h2 className="card__text">
@@ -62,8 +54,7 @@ function Card(props) {
             <button className={cardDeleteButtonClassName}
                     aria-label="Удалить карточку"
                     type="button"
-                    onClick={handleDeleteClick}
-            />
+                    onClick={handleDeleteClick} />
         </article>
     )
 }

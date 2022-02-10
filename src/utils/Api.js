@@ -1,5 +1,4 @@
 class Api {
-
     constructor({ baseUrl, headers }) {
         this._baseUrl = baseUrl;
         this._headers = headers;
@@ -30,13 +29,13 @@ class Api {
     }
 
     // Отправить свои данные профиля
-    setUserInfo(item) {
+    setUserInfo(data) {
         return fetch(`${this._baseUrl}/users/me`, {
             method: 'PATCH',
             headers: this._headers,
             body: JSON.stringify({
-                name: item.EditName,
-                about: item.EditInfo
+                name: data.name,
+                about: data.about
             })
         })
             .then(this._handleResponse)
