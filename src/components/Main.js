@@ -14,13 +14,13 @@ function Main(props) {
                          aria-label="Изменить аватар"
                          onClick={props.onEditAvatar}>
                         <img className="profile__image"
-                             src={currentUser?.avatar}
+                             src={currentUser.avatar}
                              alt="Изображение профиля" />
                     </div>
                     <div className="profile__info">
                         <div className="profile__name-box">
                             <h1 className="profile__name">
-                                {currentUser?.name}
+                                {currentUser.name}
                             </h1>
                             <button className="profile__button-edit"
                                     aria-label="Изменить данные профиля"
@@ -28,7 +28,7 @@ function Main(props) {
                                     onClick={props.onEditProfile} />
                         </div>
                         <p className="profile__text">
-                            {currentUser?.about}
+                            {currentUser.about}
                         </p>
                     </div>
                 </div>
