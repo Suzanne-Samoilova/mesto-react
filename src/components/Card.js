@@ -40,7 +40,8 @@ function Card(props) {
             </div>
             <div className="card__name">
                 <h2 className="card__text">
-                    {props.card.name}</h2>
+                    {props.card.name}
+                </h2>
                 <div className="card__like-container">
                     <button className={cardLikeButtonClassName}
                             aria-label="Лайк"
